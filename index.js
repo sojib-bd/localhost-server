@@ -98,7 +98,7 @@ app.post('/placeOrder', (req, res) => {
     orderDetail.time = new Date();
     client = new MongoClient(uri, { useNewUrlParser: true });
     client.connect(err => {
-        const collection = client.db("onlineStore").collection("orders");
+        const collection = client.db("FoodStore").collection("orders");
         collection.insertOne(orderDetail, (err, result) => {
             if (err) {
                 console.log(err)
